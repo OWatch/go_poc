@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"sync"
-	"testing"
 	"time"
 )
 
@@ -11,7 +10,7 @@ var (
 	mu sync.Mutex
 )
 
-func TestMutex(t *testing.T) {
+func testMutex() {
 	var cnt = new(int)
 	*cnt = 0
 	var i = 0

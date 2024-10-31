@@ -1,19 +1,17 @@
-package collection
+package main
 
 import (
 	"encoding/base64"
 	"fmt"
 	"net/url"
 	"strings"
-	"testing"
-	"time"
 
 	jsoniter "github.com/json-iterator/go"
 )
 
 const qZoneSchemaPrefix = "xxx"
 
-func TestStringJoin(t *testing.T) {
+func testStringJoin() {
 	stringArray1 := []string{"bob", "alice"}
 	resultString1 := strings.Join(stringArray1, ",")
 	fmt.Printf("resultString1:%s", resultString1)
@@ -30,7 +28,7 @@ func TestStringJoin(t *testing.T) {
 	fmt.Println()
 }
 
-func TestStringJoinAndMarshal(t *testing.T) {
+func testStringJoinAndMarshal() {
 	extend := make(map[string]string, 0)
 	titles := make([]string, 0)
 	for i := 1; i < 11; i++ {
@@ -51,7 +49,7 @@ func TestStringJoinAndMarshal(t *testing.T) {
 	fmt.Printf("lucyTitleArr:%s", lucyTitleArr)
 }
 
-func TestStringTrim(t *testing.T) {
+func testStringTrim() {
 	str1 := "\"this is a str\""
 	result1 := doTrim(str1)
 	fmt.Printf("result1:%s", result1)
@@ -90,16 +88,6 @@ func doTrim(rawStr string) string {
 	result = strings.TrimSuffix(result, "\"")
 
 	return result
-}
-
-func TestStringUrlTrans(t *testing.T) {
-	fmt.Printf(time.Now().Format("20060102"))
-	fmt.Println()
-}
-
-func TestDecodeStringBase64(t *testing.T) {
-	fmt.Println()
-
 }
 
 func AppendParameter(baseURL string, key string, value string) string {

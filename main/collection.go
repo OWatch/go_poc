@@ -1,12 +1,15 @@
-package collection
+package main
 
 import (
 	"fmt"
 	"strings"
-	"testing"
 )
 
-func TestArray(t *testing.T) {
+func main() {
+	testArray()
+}
+
+func testArray() {
 	// init
 	arr1 := []string{"bob"}
 
@@ -14,11 +17,25 @@ func TestArray(t *testing.T) {
 	fmt.Println(arr1[0])
 
 	// write
-	//arr1 = append()
-	//fmt.Println(arr1[1])
+	// arr1 = append()
+	// fmt.Println(arr1[1])
 }
 
-func TestMap(t *testing.T) {
+func testSlice() {
+	s := make([]int, 0, 3)
+	fmt.Println(s, len(s))
+	s = append(s, 101)
+	fmt.Println(s, len(s))
+	fmt.Println("===========")
+
+	s2 := make([]int, 3)
+	fmt.Println(s, len(s2))
+	s2 = append(s2, 101)
+	s2[1] = 1
+	fmt.Println(s2, len(s2))
+}
+
+func testMap() {
 	// init1
 	hash1 := map[string]string{
 		"name": "bob",
@@ -44,9 +61,11 @@ func TestMap(t *testing.T) {
 	delete(hash1, "name")
 	fmt.Println(hash1)
 
+	var dp [1][2]int
+	fmt.Println(dp)
 }
 
-func TestErr(t *testing.T) {
+func testErr() {
 	arr := strings.Split("", ",")
 
 	for _, str := range arr {

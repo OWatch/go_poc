@@ -1,13 +1,16 @@
-package runtime
+package main
 
 import (
 	"context"
 	"fmt"
-	"testing"
 	"time"
 )
 
-func TestContext(t *testing.T) {
+func main() {
+	testContext()
+}
+
+func testContext() {
 	ctx, cancal := context.WithTimeout(context.Background(), 1*time.Second)
 	defer cancal()
 

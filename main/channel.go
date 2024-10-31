@@ -3,10 +3,13 @@ package main
 import (
 	"fmt"
 	"sync"
-	"testing"
 )
 
-func TestChannel(t *testing.T) {
+func main() {
+	testChannel()
+}
+
+func testChannel() {
 	arr1 := make([]int, 0)
 	arr2 := make([]int, 0)
 	ch := make(chan []int, 1)
